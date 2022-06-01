@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use  App\Http\Controllers\FormregController;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +19,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('register');
 });
+Route::get('/', function () {
+    return view('contact');
+});
+Route::get('/', function () {
+    return view('aboutUS');
+});
+Route::get('/register_user', [FormregController::class, 'get_data']);
+Route::get('/register_id', [FormregController::class, 'get_id']);
