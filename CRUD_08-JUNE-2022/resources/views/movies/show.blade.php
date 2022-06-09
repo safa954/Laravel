@@ -34,7 +34,7 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>image:</strong>
-                <img src="{{asset('storage/images/'.$movie->photo)}}" style="width:100px ;height:100px;">
+                <img src="{{ url('public/images/'.$movie->photo)}}" style="width:100px ;height:100px;">
             </div>
         </div>
     </div>

@@ -30,6 +30,7 @@ class MovieController extends Controller
     {
         //to create a new movie in create page
         return view('movies.create');
+
     }
 
     /**
@@ -46,7 +47,7 @@ class MovieController extends Controller
             'movie_description'=>'required',
         ]);
 
-        $request->file('photo')->storeAs('public/images',$request->photo->getClientOriginalName());
+        $request->file('photo')->move('public/images',$request->photo->getClientOriginalName());
        // $path = $request->file('photo')->move(public_path('public/images'),$name);
         $inputs->photo= $request->photo->getClientOriginalName();
         $inputs->movie_name=$request->post('movie_name');
@@ -99,7 +100,7 @@ class MovieController extends Controller
             'movie_description'=>'required',
         ]);
 
-        $request->file('photo')->storeAs('public/images',$request->photo->getClientOriginalName());
+        $request->file('photo')->move('public/images',$request->photo->getClientOriginalName());
         //dd($request);
         // $path = $request->file('photo')->move(public_path('public/images'),$name);
 
